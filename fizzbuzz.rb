@@ -5,12 +5,11 @@ module FizzBuzz
   extend self
 
   def check n
-    if Fizz.check(n) && Buzz.check(n)
-      'fizzbuzz'
-    elsif Fizz.check(n)
-      'fizz'
-    elsif Buzz.check(n)
-      'buzz'
+    return unless Numeric === n
+
+    results = [Fizz.check(n), Buzz.check(n)].compact
+    if results.any?
+      results.join
     else
       n.to_s
     end
