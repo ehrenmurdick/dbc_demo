@@ -1,7 +1,9 @@
 module Fizz
   extend self
+  FIZZ    = 'fizz'
+  DIVISOR = 5
 
   def check n
-    (n % 5) == 0
+    FIZZ if (n % DIVISOR) == 0
   end
 end
